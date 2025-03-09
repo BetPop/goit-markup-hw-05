@@ -334,22 +334,6 @@ margin-right: 80px;;
     flex-direction: row;
     gap: 24px;
 }
-/* .subscribe-text {
-    margin-bottom: 16px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: #ffffff;
-} */
-/* 
-.subscribe-input-label {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: #fff;
-} */
 
 .subscribe-email-input {
     border: 1px solid #fff;
@@ -632,8 +616,7 @@ margin-right: 80px;;
     height: 100%;
     background-color: rgba(46, 47, 66, 0.4);
 
-    transition-property: opacity, visibility;
-    transition: 300ms ease-in;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -648,8 +631,7 @@ margin-right: 80px;;
     border-radius: 4px;
     box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.14);
     background: #fcfcfc;
-    transition: 300ms ease-in;
-    transition-property: opacity, transform;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     padding: 72px 24px 24px 24px;
 }
 
@@ -658,7 +640,7 @@ margin-right: 80px;;
     background-color: #e7e9fc;
     height: 24px;
     width: 24px;
-    border-radius: 100%;
+    border-radius: 50%;
     position: absolute;
     top: 24px;
     right: 24px;
@@ -667,8 +649,7 @@ margin-right: 80px;;
     justify-content: center;
     align-items: center;
 
-    transition: background-color;
-    transition: var(--transition);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -729,7 +710,22 @@ margin-right: 80px;;
 /* #endregion */
 
 /* #region Modal form */
+.form-element-wrapper {
+    margin-bottom: 8px;
+}
 
+.form-policy-wrapper{
+margin-bottom: 24px;
+}
+
+.label-form {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+    display: block;
+    margin-bottom: 4px;
+}
 .modal-form-title {
 
     font-weight: 500;
@@ -738,17 +734,18 @@ margin-right: 80px;;
     letter-spacing: 0.02em;
     text-align: center;
     color: #2e2f42;
+    margin-bottom: 16px;
 }
 
 .modal-application-form {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    /* gap: 8px; */
     margin-top: 16px;
 }
 
 
-.modal-form-label {
+/* .modal-form-label {
     display: block;
     font-weight: 400;
     font-size: 12px;
@@ -757,7 +754,7 @@ margin-right: 80px;;
     color: #8e8f99;
     margin-bottom: 4px;
 
-}
+} */
 
 
 .modal-form-input {
@@ -769,6 +766,7 @@ margin-right: 80px;;
     font-size: 18px;
     padding: 11px 38px;
     outline: transparent;
+    background-color: transparent;
     transition: var(--transition);
     transition-property: border-color;
 }
@@ -785,13 +783,15 @@ margin-right: 80px;;
     padding: 8px 16px;
 
     font-size: 12px;
-    line-height: 1.16667;
+    line-height: 1.17;
     letter-spacing: 0.04em;
-    outline: none;
+    outline: transparent;
     resize: none;
 
-    transition: var(--transition);
-    transition-property: border-color;
+    color: rgba(46, 47, 66, 0.4);
+    background-color: transparent;
+
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form-comment::placeholder {
@@ -803,18 +803,28 @@ margin-right: 80px;;
 }
 
 .policy-checkbox-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    width: 100%;
-    margin-bottom: 16px;
-}
-
-.modal-form-policy-text {
     font-size: 12px;
-    line-height: 1.16667;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
+}
+
+.modal-form-checkbox{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 2px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill: transparent;
+
+}
+
+.visually-hidden {
+
 }
 
 .privacy-link {
@@ -873,4 +883,9 @@ input[type="checkbox"]:checked {
     background-size: 10px;
 }
 
+input[type="checkbox"]:checked + .modal-form-checkbox {
+background-color: #404bbf;
+border: none;
+fill:#F4F4FD;
+}
 /* #endregion */
