@@ -332,7 +332,7 @@ margin-right: 80px;;
 .subscribe-form {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 24px;
 }
 /* .subscribe-text {
     margin-bottom: 16px;
