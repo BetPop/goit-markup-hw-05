@@ -269,10 +269,13 @@ a:focus {
     justify-content: space-between;
 }
 
-.socials-text {
-    font-weight: 500;
-    color: #fff;
+.socials-text, .subscribe-text {
     margin-bottom: 16px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: #fff;
 }
 .team-socials-icons {
     width: 16;
@@ -331,14 +334,22 @@ margin-right: 80px;;
     flex-direction: column;
     gap: 16px;
 }
-
+/* .subscribe-text {
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+} */
+/* 
 .subscribe-input-label {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #fff;
-}
+} */
 
 .subscribe-email-input {
     border: 1px solid #fff;
@@ -346,13 +357,14 @@ margin-right: 80px;;
     width: 264px;
     height: 40px;
     outline: none;
-    background: transparent;
-    padding: 8px 16px;
+    background-color: transparent;
     font-weight: 400;
     font-size: 12px;
     line-height: 2;
     letter-spacing: 0.04em;
     color: #fff;
+    padding-left: 16px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .subscribe-email-input::placeholder {
@@ -370,9 +382,14 @@ margin-right: 80px;;
 }
 
 .subscribe-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
     border-radius: 4px;
     padding: 8px 24px;
-    width: 165px;
+    min-width: 165px;
     height: 40px;
     background: #4d5ae5;
     border: none;
@@ -384,9 +401,9 @@ margin-right: 80px;;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.04em;
-    text-align: left;
     color: #fff;
     white-space: nowrap;
+    cursor: pointer;
 
     transition: var(--transition);
     transition-property: background-color;
@@ -394,9 +411,7 @@ margin-right: 80px;;
 }
 
 .subscribe-icon {
-    position: absolute;
-    top: 8px;
-    right: 24px;
+   margin-left: 16px;
 }
 
 .subscribe-button:hover {
