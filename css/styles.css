@@ -331,7 +331,7 @@ margin-right: 80px;;
 }
 .subscribe-form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 24px;
 }
 /* .subscribe-text {
